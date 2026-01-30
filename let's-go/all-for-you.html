@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+   <link href="https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap" rel="stylesheet">
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #1d0b3a, #5f0f40, #9a1750);
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 50px;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #ff8dc7;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* SECTIONS */
+    section {
+  text-align: center;
+  position: relative;
+  scroll-margin-top: 120px;
+}
+
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      text-shadow: 0 0 20px rgba(255, 140, 199, 0.6);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      max-width: 750px;
+      margin: 0 auto 35px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #f6d6e8;
+    }
+
+    /* BUTTON */
+    .btn {
+      padding: 14px 40px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #ff5ec4, #ff8dc7);
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 0 25px rgba(255, 94, 196, 0.7);
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 40px rgba(255, 94, 196, 1);
+    }
+
+    /* HOME */
+ #home {
+    
+  min-height: calc(100vh + 120px);
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+    #home::before {
+  content: "❤️";
+  font-size: 15rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.05;
+  pointer-events: none;
+}
+    /* FOR YOU */
+    #for-you {
+        
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    /* MEMORIES GRID */
+    #memories {
+
+      background: linear-gradient(135deg, #2b1055, #6a0572);
+    }
+
+    .grid {
+      max-width: 1100px;
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 220px);
+      gap: 25px;
+    }
+
+    .grid div {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #ffe6f2;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* QR */
+    #qr {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .qr-box {
+      width: 220px;
+      height: 220px;
+      background: white;
+      margin: 40px auto;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+footer {
+  min-height: 140px;
+  height: auto;
+  padding: 3rem 1rem;
+}
+footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  min-height: 160px;
+  padding: 3.5rem 1.5rem;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 140, 199, 0.35),
+      rgba(60, 0, 40, 0.95)
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.95)
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: #ffd6eb;
+  font-size: 1.35rem;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.7px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* glowing top divider */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #ff8dc7,
+    #ffb3dd,
+    #ff8dc7,
+    transparent
+  );
+  opacity: 0.8;
+}
+
+/* floating love icon */
+footer::after {
+  content: "💌";
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.12;
+  bottom: 20px;
+  right: 40px;
+  animation: floatHeart 6s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(5deg);
+  }
+}
+
+footer p {
+  text-shadow:
+    0 0 10px rgba(255, 140, 199, 0.35),
+    0 0 20px rgba(255, 140, 199, 0.15);
+}
+
+
+    /* LETTER */
+    #letter {
+  background: linear-gradient(
+    135deg,
+    #916956,   /* deep vintage plum */
+    #3a242c,
+    #1e1216   /* dark sepia */
+  );
+}
+      .letter-box {
+  max-width: 820px;
+  margin: 40px auto;
+  padding: 55px 50px;
+
+  background: linear-gradient(
+    180deg,
+    #f7ead7,   /* parchment top */
+    #c7b39c,
+    #925610    /* aged bottom */
+  );
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    inset 0 0 60px rgba(140, 90, 40, 0.15);
+
+  position: relative;
+}
+.letter-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.35),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+.letter-text p {
+  font-family: "Passions Conflict", cursive;
+  font-size: 2.2rem;
+  line-height: 2.1;
+  letter-spacing: 0;
+  color: #4b2e1f;   /* vintage ink brown */
+}
+.letter-text p:first-child {
+  color: #3a1f14;
+}
+
+
+  
+  .section {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+  transition: opacity 0.8s ease;
+}
+
+.section.active {
+  height: calc(100vh - 120px); /* navbar height */
+  padding: 60px;
+  opacity: 1;
+  overflow: auto;
+}
+
+.letter-box p {
+  font-family: "Passions Conflict", cursive;
+  font-size: 1.8rem;        /* similar to screenshot */
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  color: #ffe9f5;
+}
+
+.letter-box {
+  background: rgba(197, 84, 84, 0.14);
+  backdrop-filter: blur(6px);
+}
+.btn .gift {
+  display: inline-block;
+  margin-right: 8px;
+  animation: giftBounce 1.6s infinite;
+}
+
+@keyframes giftBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-5deg);
+  }
+}
+.btn .gift {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+.grid div {
+  position: relative;
+  overflow: hidden;        /* prevents overflow */
+  border-radius: 20px;
+}
+
+/* image fitting */
+.grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* 👈 magic line */
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* optional hover zoom */
+.grid div:hover img {
+  transform: scale(1.08);
+}
+
+/* LIGHTBOX OVERLAY */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;.grid div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.35),
+    transparent
+  );
+  pointer-events: none;  /* 👈 THIS FIXES IT */
+}
+
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(255, 140, 199, 0.6);
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* cursor hint */
+.grid img {
+  cursor: zoom-in;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">💖 My Love</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#for-you">For You</a></li>
+      <li><a href="#memories">Our Memories</a></li>
+      <li><a href="#letter">Letter</a></li>
+      <li><a href="#qr">QR</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <!--<section id="home">-->
+    <section id="home" class="section active">
+    <h1>Happy Birthday Subhajit 🎉</h1>
+    <p>This isn’t just a website…
+it’s a feeling..</p>
+    <!--<a href="#for-you" class="btn">click to see the magic</a>
+    <a href="#for-you" class="btn" id="btn-home">open your surprise </a>-->
+    <a href="#for-you" class="btn" id="btn-home">
+  <span class="gift">🎁</span> open your surprise
+</a>
+
+
+  </section>
+
+  <!-- FOR YOU -->
+  <!--<section id="for-you">-->
+    <section id="for-you" class="section">
+    <h2>For You</h2>
+    <p>This cake is baked with wishes and a lot of love..<br>Go on… the cake is waiting</p>
+    <a href="\git_hub_projects\birthday\sweet-pause-here\a-soft-kind-of-magic_cake.html" class="btn">Go to Cake 🎂</a>
+    <br><br>
+    <!--<a href="#memories" class="btn">continue 🎂</a>-->
+    <a href="#memories" class="btn" id="btn-for-you">continue </a>
+
+  </section>
+
+  <!-- MEMORIES -->
+  <!--<section id="memories">-->
+    <section id="memories" class="section">
+    <h2>Our Memories</h2>
+    <!--<div class="grid">
+      <div>Image 1</div><div>Image 2</div><div>Image 3</div><div>Image 4</div>
+      <div>Image 5</div><div>Image 6</div><div>Image 7</div><div>Image 8</div>
+    </div>-->
+
+
+<div class="grid">
+  <div><img src="./images/img1.jpeg" alt="memory 1"></div>
+  <div><img src="./images/img2.jpeg" alt="memory 2"></div>
+  <div><img src="./images/img3.jpeg" alt="memory 3"></div>
+  <div><img src="./images/img4.jpeg" alt="memory 4"></div>
+  <div><img src="./images/img5.jpeg" alt="memory 5"></div>
+  <div><img src="./images/img6.jpeg" alt="memory 6"></div>
+  <div><img src="./images/img7.jpeg" alt="memory 7"></div>
+  <div><img src="./images/img8.jpeg" alt="memory 8"></div>
+</div>
+
+
+
+    <!--<a href="#letter" class="btn">next</a>-->
+    <a href="#letter" class="btn" id="btn-memories">next</a>
+
+  </section>
+
+  <!-- LETTER -->
+ <!-- <section id="letter">-->
+    <section id="letter" class="section">
+    <h2>A Letter For You 💌</h2>
+    <div class="letter-box">
+      <p>
+        My love (bubun),</p>
+<p>
+Happy Birthday 🤍
+Happy Birthday to the one who stole my heart…
+and then forgot to return it 😌💘</p>
+
+Eleven years.
+That’s a lot of memories, a lot of laughter,
+a lot of arguments and dramatic silences,
+and somehow… even more love.
+
+We’ve had our ups and downs —
+days when we were mad at each other for absolutely no reason,
+days when we promised “this is the last fight”
+(and then fought again 😏),
+but here we are… still choosing each other, every single time.
+
+Today isn’t just about candles, cake, or wishes —
+it’s about you.
+The person who quietly became my comfort,
+my smile, and my favorite thought.
+
+I hope this year brings you moments that make you proud of yourself,
+dreams that come closer to reality,
+and happiness that stays longer than just today.
+More laughter, fewer worries,
+and maybe slightly fewer fights.
+
+And no matter where life takes us,
+I hope you always remember this —
+after all these years,
+someone still loves you deeply,
+still believes in you,
+and made this with a full heart and a soft smile…
+just for you.</p>
+<p>
+Yours,</p>
+<p>
+Nandini 🤍
+      </p>
+    </div>
+    <!--<a href="#qr" class="btn">next</a>-->
+    <a href="#qr" class="btn" id="btn-letter">next</a>
+
+  </section>
+
+  <!-- QR -->
+  <!--<section id="qr">-->
+    <section id="qr" class="section">
+    <h2>QR Surprise</h2>
+    <div class="qr-box">QR CODE</div>
+     <footer>This is my way of saying:
+“You mean the world to me.” 💌</footer>
+    
+
+  </section>
+
+ 
+<script>
+  function unlockSection(currentId, nextId) {
+    const nextSection = document.getElementById(nextId);
+    nextSection.classList.add("active");
+
+    nextSection.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+
+  document.getElementById("btn-home").onclick = (e) => {
+    e.preventDefault();
+    unlockSection("home", "for-you");
+  };
+
+  document.getElementById("btn-for-you").onclick = (e) => {
+    e.preventDefault();
+    unlockSection("for-you", "memories");
+  };
+
+  document.getElementById("btn-memories").onclick = (e) => {
+    e.preventDefault();
+    unlockSection("memories", "letter");
+  };
+
+  document.getElementById("btn-letter").onclick = (e) => {
+    e.preventDefault();
+    unlockSection("letter", "qr");
+  };
+</script>
+
+<!-- IMAGE LIGHTBOX -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="expanded view">
+</div>
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  document.querySelectorAll(".grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add("active");
+    });
+  });
+
+  // close on click anywhere
+  lightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+    lightboxImg.src = "";
+  });
+</script>
+
+</body>
+</html>   

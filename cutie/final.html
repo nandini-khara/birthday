@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday! 🎂</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Patrick+Hand&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .heart {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .heart:nth-child(2) { animation-delay: 0.5s; }
+    .heart:nth-child(3) { animation-delay: 1s; }
+    .heart:nth-child(4) { animation-delay: 1.5s; }
+    .heart:nth-child(5) { animation-delay: 2s; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .bounce-text {
+      animation: bounce 2s ease-in-out infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+    
+    .sparkle {
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
+    
+    .nav-arrow {
+      transition: all 0.3s ease;
+    }
+    
+    .nav-arrow:hover {
+      transform: scale(1.2);
+    }
+    
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: fall 4s linear infinite;
+    }
+    
+    @keyframes fall {
+      0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100%) rotate(720deg); opacity: 0; }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full m-0 p-0 overflow-hidden">
+  <div id="app" class="w-full h-full relative overflow-hidden" style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #f48fb1 100%);"><!-- Floating Hearts Background -->
+   <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="heart absolute text-4xl" style="top: 10%; left: 5%;">
+     💕
+    </div>
+    <div class="heart absolute text-3xl" style="top: 20%; right: 10%;">
+     💖
+    </div>
+    <div class="heart absolute text-5xl" style="top: 60%; left: 8%;">
+     💗
+    </div>
+    <div class="heart absolute text-4xl" style="top: 70%; right: 5%;">
+     💝
+    </div>
+    <div class="heart absolute text-3xl" style="top: 40%; left: 3%;">
+     💓
+    </div>
+   </div><!-- Confetti -->
+   <div id="confetti-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div><!-- Slide 1: Happy Birthday -->
+   <div id="slide1" class="slide active flex-col items-center justify-center h-full w-full relative px-4">
+    <div class="text-center">
+     <h1 id="main-title" class="text-4xl md:text-6xl font-bold mb-4 bounce-text" style="font-family: 'Fredoka', sans-serif; color: #e91e63; text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff;">Happy Birthday! 🎂</h1>
+     <h2 id="name-text" class="text-2xl md:text-4xl mb-6" style="font-family: 'Patrick Hand', cursive; color: #ad1457;">My Love! 💕</h2>
+     <div class="bg-white rounded-3xl p-4 shadow-2xl inline-block" style="border: 4px solid #f48fb1;">
+      <div class="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-pink-50 rounded-2xl">
+       <div class="text-center">
+        <div class="text-8xl mb-4">
+         🎂
+        </div>
+        <div class="text-center">
+  <img src="./gifs/first.gif" alt="Happy Birthday GIF" class="w-48 h-48 mx-auto mb-4 rounded-lg shadow-lg">
+</div>
+       </div>
+      </div>
+     </div>
+     <p class="mt-6 text-lg" style="font-family: 'Patrick Hand', cursive; color: #880e4f;">Click the arrows to see more! →</p>
+    </div>
+   </div><!-- Slide 2: Proposal -->
+   <div id="slide2" class="slide flex-col items-center justify-center h-full w-full relative px-4">
+    <div class="text-center">
+     <h1 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Fredoka', sans-serif; color: #e91e63; text-shadow: 3px 3px 0 #fff;">Will You Be My Mr? 💍</h1>
+     <div class="bg-white rounded-3xl p-4 shadow-2xl inline-block" style="border: 4px solid #f48fb1;">
+      <div class="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-pink-50 rounded-2xl">
+       <div class="text-center">
+        <div class="text-8xl mb-4">
+         💖
+        </div>
+         <div class="text-center">
+            <img src="./gifs/second.gif" alt="Happy Birthday GIF" class="w-48 h-48 mx-auto mb-4 rounded-lg shadow-lg">
+        <p class="text-2xl font-bold" style="font-family: 'Patrick Hand', cursive; color: #ad1457;">The most important question!</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="mt-8 flex gap-6 justify-center"><button id="yes-btn" class="px-8 py-4 text-2xl font-bold rounded-full shadow-lg transition-transform hover:scale-110" style="font-family: 'Fredoka', sans-serif; background-color: #4caf50; color: white; border: 3px solid #2e7d32;"> Yes! 💕 </button> <button id="no-btn" class="px-8 py-4 text-2xl font-bold rounded-full shadow-lg transition-transform hover:scale-110" style="font-family: 'Fredoka', sans-serif; background-color: #f44336; color: white; border: 3px solid #c62828;"> No 😢 </button>
+     </div>
+    </div>
+   </div><!-- Slide 3: I Love You -->
+   <div id="slide3" class="slide flex-col items-center justify-center h-full w-full relative px-4">
+    <div class="text-center">
+     <h1 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Fredoka', sans-serif; color: #e91e63; text-shadow: 3px 3px 0 #fff;">I Love You! 💖</h1>
+     <div class="bg-white rounded-3xl p-4 shadow-2xl inline-block" style="border: 4px solid #f48fb1;">
+      <div class="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-pink-50 rounded-2xl">
+       <div class="text-center">
+        <div class="text-8xl mb-4">
+         🥰
+        </div>
+<div class="text-center">
+    <img src="./gifs/fourth.gif" alt="Happy Birthday GIF" class="w-48 h-48 mx-auto mb-4 rounded-lg shadow-lg">
+   
+        <p class="text-2xl font-bold" style="font-family: 'Patrick Hand', cursive; color: #ad1457;">kisses & hugs!</p>
+
+</div>
+       </div>
+      </div>
+     </div>
+     <p class="mt-6 text-xl" style="font-family: 'Patrick Hand', cursive; color: #880e4f;">You make every day special! ✨</p>
+    </div>
+   </div><!-- Slide 3.5: How Dare You (No response) -->
+   <div id="slide3-no" class="slide flex-col items-center justify-center h-full w-full relative px-4">
+    <div class="text-center">
+     <h1 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Fredoka', sans-serif; color: #e91e63; text-shadow: 3px 3px 0 #fff;">How Dare You?! 😤</h1>
+     <div class="bg-white rounded-3xl p-4 shadow-2xl inline-block" style="border: 4px solid #f48fb1;">
+      <div class="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-pink-50 rounded-2xl">
+       <div class="text-center">
+        <div class="text-8xl mb-4">
+         😡
+        </div>
+ <div class="text-center">
+    <img src="./gifs/third.gif" alt="Happy Birthday GIF" class="w-48 h-48 mx-auto mb-4 rounded-lg shadow-lg">
+    
+        <p class="text-2xl font-bold" style="font-family: 'Patrick Hand', cursive; color: #ad1457;">Wrong answer! 😤</p>
+</div>
+       </div>
+      </div>
+     </div>
+     <p class="mt-6 text-xl" style="font-family: 'Patrick Hand', cursive; color: #880e4f;">You better think again! 💢</p><button id="go-back-btn" class="mt-8 px-8 py-4 text-2xl font-bold rounded-full shadow-lg transition-transform hover:scale-110" style="font-family: 'Fredoka', sans-serif; background-color: #e91e63; color: white; border: 3px solid #ad1457;"> Go Back ↩️ </button>
+    </div>
+   </div><!-- Slide 4: You're Amazing -->
+   <div id="slide4" class="slide flex-col items-center justify-center h-full w-full relative px-4">
+    <div class="text-center">
+     <h1 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Fredoka', sans-serif; color: #e91e63; text-shadow: 3px 3px 0 #fff;">You're Amazing! ⭐</h1>
+     <div class="bg-white rounded-3xl p-4 shadow-2xl inline-block" style="border: 4px solid #f48fb1;">
+      <div class="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-pink-50 rounded-2xl">
+       <div class="text-center">
+        <div class="text-8xl mb-4">
+         🌟
+        </div>
+<div class="text-center">
+    <img src="./gifs/fifth.gif" alt="Happy Birthday GIF" class="w-48 h-48 mx-auto mb-4 rounded-lg shadow-lg">
+   
+        <p class="text-2xl font-bold" style="font-family: 'Patrick Hand', cursive; color: #ad1457;">You're a star!</p>
+</div>
+       </div>
+      </div>
+     </div>
+     <p class="mt-6 text-xl" style="font-family: 'Patrick Hand', cursive; color: #880e4f;">The most wonderful person! 💫</p>
+    </div>
+   </div><!-- Slide 5: Final Wish -->
+   <div id="slide5" class="slide flex-col items-center justify-center h-full w-full relative px-4">
+    <div class="text-center">
+     <h1 class="text-4xl md:text-5xl font-bold mb-4 sparkle" style="font-family: 'Fredoka', sans-serif; color: #e91e63; text-shadow: 3px 3px 0 #fff;">best wishes for you 🌠</h1>
+     <div class="bg-white rounded-3xl p-4 shadow-2xl inline-block" style="border: 4px solid #f48fb1;">
+      <div class="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-pink-50 rounded-2xl">
+       <div class="text-center">
+        <div class="text-8xl mb-4">
+         🎁
+        </div>
+
+
+
+
+
+
+<div class="text-center">
+    <img src="./gifs/sixth.gif" alt="Happy Birthday GIF" class="w-48 h-48 mx-auto mb-4 rounded-lg shadow-lg">
+    
+        <p class="text-2xl font-bold" style="font-family: 'Patrick Hand', cursive; color: #ad1457;">All your dreams come true!</p>
+
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+       </div>
+      </div>
+     </div>
+     <p class="mt-6 text-xl" style="font-family: 'Patrick Hand', cursive; color: #880e4f;">Have the best birthday ever! 🎉🎈🎊</p>
+    </div>
+   </div><!-- Navigation Arrows --> <button id="prev-btn" class="nav-arrow absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center z-10" style="border: 3px solid #f48fb1; display: none;"> <span class="text-3xl" style="color: #e91e63;">←</span> </button> <button id="next-btn" class="nav-arrow absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center z-10" style="border: 3px solid #f48fb1;"> <span class="text-3xl" style="color: #e91e63;">→</span> </button> <!-- Page Indicator -->
+   <div id="page-indicator" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+    <div class="dot w-3 h-3 rounded-full bg-white border-2 transition-all" style="border-color: #e91e63;"></div>
+    <div class="dot w-3 h-3 rounded-full bg-white border-2 transition-all" style="border-color: #e91e63;"></div>
+    <div class="dot w-3 h-3 rounded-full bg-white border-2 transition-all" style="border-color: #e91e63;"></div>
+    <div class="dot w-3 h-3 rounded-full bg-white border-2 transition-all" style="border-color: #e91e63;"></div>
+    <div class="dot w-3 h-3 rounded-full bg-white border-2 transition-all" style="border-color: #e91e63;"></div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      birthday_name: "My Love",
+      main_message: "Happy Birthday!",
+      background_color: "#fce4ec",
+      accent_color: "#e91e63",
+      text_color: "#ad1457",
+      font_family: "Fredoka",
+      font_size: 16
+    };
+
+    let currentSlide = 0;
+    const totalSlides = 5;
+    
+    // Slide order: 0=Birthday, 1=Proposal, 2=I Love You, 3=You're Amazing, 4=Make a Wish
+
+    // Yes/No button handlers
+    document.getElementById('yes-btn').addEventListener('click', () => {
+      currentSlide = 2; // Go to "I Love You" slide
+      showSlide(currentSlide);
+    });
+
+    document.getElementById('no-btn').addEventListener('click', () => {
+      // Show the "How Dare You" slide
+      document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
+      document.getElementById('slide3-no').classList.add('active');
+      document.getElementById('prev-btn').style.display = 'none';
+      document.getElementById('next-btn').style.display = 'none';
+      document.getElementById('page-indicator').style.display = 'none';
+    });
+
+    document.getElementById('go-back-btn').addEventListener('click', () => {
+      currentSlide = 1; // Go back to proposal slide
+      showSlide(currentSlide);
+      document.getElementById('page-indicator').style.display = 'flex';
+    });
+
+    // Create confetti
+    function createConfetti() {
+      const container = document.getElementById('confetti-container');
+      const colors = ['#e91e63', '#f48fb1', '#fce4ec', '#ff4081', '#f50057', '#ffeb3b', '#4caf50'];
+      
+      for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 4 + 's';
+        confetti.style.animationDuration = (3 + Math.random() * 2) + 's';
+        container.appendChild(confetti);
+      }
+    }
+
+    function showSlide(index) {
+      const slideElements = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'];
+      const dots = document.querySelectorAll('.dot');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      // Hide all slides
+      slideElements.forEach(slideId => {
+        document.getElementById(slideId).classList.remove('active');
+      });
+      
+      // Hide the "no" slide
+      document.getElementById('slide3-no').classList.remove('active');
+
+      // Show current slide
+      document.getElementById(slideElements[index]).classList.add('active');
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (i === index) {
+          dot.style.backgroundColor = '#e91e63';
+          dot.style.transform = 'scale(1.3)';
+        } else {
+          dot.style.backgroundColor = 'white';
+          dot.style.transform = 'scale(1)';
+        }
+      });
+
+      // Show/hide navigation based on slide
+      if (index === 0) {
+        // Slide 1 (Happy Birthday): only next arrow
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'flex';
+      } else if (index === 1) {
+        // Slide 2 (Proposal): both arrows
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+      } else if (index === 2) {
+        // Slide 3 (I Love You): both arrows
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+      } else if (index === 3) {
+        // Slide 4 (You're Amazing): both arrows
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+      } else if (index === 4) {
+        // Slide 5 (Make a Wish): only prev arrow
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'none';
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    document.getElementById('next-btn').addEventListener('click', nextSlide);
+    document.getElementById('prev-btn').addEventListener('click', prevSlide);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) nextSlide();
+      if (touchEndX - touchStartX > 50) prevSlide();
+    });
+
+    async function onConfigChange(config) {
+      const nameText = document.getElementById('name-text');
+      const mainTitle = document.getElementById('main-title');
+      
+      if (nameText) {
+        nameText.textContent = (config.birthday_name || defaultConfig.birthday_name) + '! 💕';
+      }
+      if (mainTitle) {
+        mainTitle.textContent = (config.main_message || defaultConfig.main_message) + ' 🎂';
+      }
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["birthday_name", config.birthday_name || defaultConfig.birthday_name],
+        ["main_message", config.main_message || defaultConfig.main_message]
+      ]);
+    }
+
+    // Initialize
+    createConfetti();
+    showSlide(0);
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c582186f7f68171',t:'MTc2OTY4MzQzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
