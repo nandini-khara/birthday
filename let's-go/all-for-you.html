@@ -94,12 +94,10 @@
     }
 
     p {
-      max-width: 750px;
-      margin: 0 auto 35px;
-      line-height: 1.8;
-      font-size: 1.05rem;
-      color: #f6d6e8;
-    }
+  max-width: 750px;
+  margin: 0 auto 35px;
+}
+
 
     /* BUTTON */
     .btn {
@@ -321,19 +319,6 @@ footer p {
   );
   pointer-events: none;
 }
-.letter-text p {
-  font-family: "Passions Conflict", cursive;
-  font-size: 2.2rem;
-  line-height: 2.1;
-  letter-spacing: 0;
-  color: #4b2e1f;   /* vintage ink brown */
-}
-.letter-text p:first-child {
-  color: #3a1f14;
-}
-
-
-  
   .section {
   height: 0;
   overflow: hidden;
@@ -349,23 +334,9 @@ footer p {
   overflow: auto;
 }
 
-.letter-box p {
-  font-family: "Passions Conflict", cursive;
-  font-size: 1.8rem;        /* similar to screenshot */
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-  color: #ffe9f5;
-}
 
-.letter-box {
-  background: rgba(197, 84, 84, 0.14);
-  backdrop-filter: blur(6px);
-}
-.btn .gift {
-  display: inline-block;
-  margin-right: 8px;
-  animation: giftBounce 1.6s infinite;
-}
+
+
 
 @keyframes giftBounce {
   0%, 100% {
@@ -453,6 +424,41 @@ footer p {
 .grid img {
   cursor: zoom-in;
 }
+.qr-img {
+  width: 160px;      /* visible size */
+  max-width: 90vw;   /* prevents overflow on small screens */
+  height: auto;      /* keeps aspect ratio */
+}
+
+
+
+
+
+.letter-box {
+  font-family: "Passions Conflict", cursive !important;
+  color: #ffe9f5;
+  background: rgba(197, 84, 84, 0.14);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  padding: 55px 50px;
+}
+
+
+
+.letter-box p {
+  font-family: "Passions Conflict", cursive !important;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: #ffe9f5;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
 
   </style>
 </head>
@@ -531,48 +537,60 @@ it’s a feeling..</p>
     <section id="letter" class="section">
     <h2>A Letter For You 💌</h2>
     <div class="letter-box">
-      <p>
-        My love (bubun),</p>
-<p>
-Happy Birthday 🤍
-Happy Birthday to the one who stole my heart…
-and then forgot to return it 😌💘</p>
 
-Eleven years.
-That’s a lot of memories, a lot of laughter,
-a lot of arguments and dramatic silences,
-and somehow… even more love.
+  <p>My love,</p>
 
-We’ve had our ups and downs —
-days when we were mad at each other for absolutely no reason,
-days when we promised “this is the last fight”
-(and then fought again 😏),
-but here we are… still choosing each other, every single time.
+  <p>
+    Happy Birthday 🤍<br>
+    Happy Birthday to the one who stole my heart…
+    and then forgot to return it ..
 
-Today isn’t just about candles, cake, or wishes —
-it’s about you.
-The person who quietly became my comfort,
-my smile, and my favorite thought.
+  <br>
+    Eleven years.
+    That’s a lot of memories, a lot of laughter,
+    a lot of arguments and dramatic silences,
+    and somehow… even more love.
+  <br>
 
-I hope this year brings you moments that make you proud of yourself,
-dreams that come closer to reality,
-and happiness that stays longer than just today.
-More laughter, fewer worries,
-and maybe slightly fewer fights.
+  <br>
+    We’ve had our ups and downs —
+    days when we were mad at each other for absolutely no reason,
+    days when we promised “this is the last fight”
+    (and then fought again 😏),
+    but here we are… still choosing each other, every single time.
+  <br>
 
-And no matter where life takes us,
-I hope you always remember this —
-after all these years,
-someone still loves you deeply,
-still believes in you,
-and made this with a full heart and a soft smile…
-just for you.</p>
-<p>
-Yours,</p>
-<p>
-Nandini 🤍
-      </p>
-    </div>
+  <br>
+    Today isn’t just about candles, cake, or wishes 
+    it’s about you.<br>
+    The person who quietly became my comfort,
+    my smile, and my favorite thought.
+  <br>
+
+  <p>
+    I hope this year brings you moments that make you proud of yourself,
+    dreams that come closer to reality,
+    and happiness that stays longer than just today.
+    More laughter, fewer worries,
+    and maybe slightly fewer fights.
+  </p>
+
+  <p>
+    And no matter where life takes us,<br>
+    I hope you always remember this —<br>
+    after all these years,
+    someone still loves you deeply,
+    still believes in you,
+    and made this with a full heart and a soft smile…
+    just for you.
+  </p>
+
+  <p>Yours,</p>
+
+  <p>Nandini 🤍</p>
+
+</div>
+
     <!--<a href="#qr" class="btn">next</a>-->
     <a href="#qr" class="btn" id="btn-letter">next</a>
 
@@ -582,7 +600,8 @@ Nandini 🤍
   <!--<section id="qr">-->
     <section id="qr" class="section">
     <h2>QR Surprise</h2>
-    <div class="qr-box">QR CODE</div>
+    <div class="qr-box"><img src="images/qr-final.png" class="qr-img" alt="QR Code">
+</div>
      <footer>This is my way of saying:
 “You mean the world to me.” 💌</footer>
     
